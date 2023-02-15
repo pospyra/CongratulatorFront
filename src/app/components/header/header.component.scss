@@ -1,0 +1,15 @@
+:host{
+    display: flex;
+    gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+
+    .menu{
+        display: flex;
+        width: 200;
+        height: 200;
+        margin: 10px;
+        gap: 50px;
+    }
+}

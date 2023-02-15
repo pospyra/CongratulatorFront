@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  list$: Observable<LisrBirthday[]> = this.service.getListAll();
+  list$: Observable<LisrBirthday[]> =  this.service.getListNearest();
   constructor(private service: LisrBirthdayService) { }
 
   ngOnInit(): void {
-    this.service.getListAll();
+    this.service.getListNearest();
     }
 
   GetList(){
