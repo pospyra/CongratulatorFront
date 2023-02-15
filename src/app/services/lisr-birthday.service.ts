@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LisrBirthday } from '../models/ListBirthday';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class LisrBirthdayService {
 
   constructor(private _http : HttpClient) { }
 
-  getListAll() : Observable<any>{
-    return this._http.get<any>(`https://localhost:7228/getAll`)
+  getListAll() : Observable<LisrBirthday[]>{
+    return this._http.get<LisrBirthday[]>(`https://localhost:7228/getAll`)
   }
+  
 }
