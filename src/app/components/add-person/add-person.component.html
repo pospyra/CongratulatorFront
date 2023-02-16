@@ -1,0 +1,18 @@
+<p>Добавить запись</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+    <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="date">
+            Дата
+          </label>
+          <input id="date" type="text" formControlName="date">
+        </div>
+
+        <button class="button" type="submit">Добавить</button>
+</form>

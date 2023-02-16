@@ -1,6 +1,7 @@
 <p > Список дней рождений </p>
 <div class="list">
     <div *ngFor="let item of list$ |async" class="item">
+        <button (click)="deletePerson(item.id)" style="float: right;  color:brown">Delete</button>
         <p>{{item.name}}</p>
         <p >День Рождение {{item.dateBirthday |date}} </p>
         <div class="photo">

@@ -16,10 +16,9 @@ export class HomeComponent implements OnInit {
     this.service.getListNearest();
     }
 
-  GetList(){
-    var list = this.service.getListAll().subscribe(res=>{
-      console.log(res)});
-        return list;
+    deletePerson(id: number){
+      this.service.deletePerson(id);
+      console.log('удалено');
     }
   }
 

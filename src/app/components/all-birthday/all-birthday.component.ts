@@ -15,4 +15,11 @@ export class AllBirthdayComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getListAll();
-    }}
+    }
+
+    deletePerson(id: number){
+      this.service.deletePerson(id);
+      console.log('удалено');
+    }
+  
+  }

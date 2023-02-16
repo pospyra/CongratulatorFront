@@ -18,5 +18,11 @@ export class LisrBirthdayService {
     return this._http.get<LisrBirthday[]>(`https://localhost:7228/nearestBirthday`)
   }
   
-  
+  public createPerson(name: any, date: any, photo: any ) : Observable<any>{
+    return this._http.post(`https://localhost:7228/createAd?name=${name}&dateBrth=${date}`, photo);
+  }
+
+  public deletePerson(id: number): void{
+    this._http.delete(`https://localhost:7228/delete/${id}`).subscribe();
+  }
 }
