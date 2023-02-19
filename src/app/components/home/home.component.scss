@@ -1,25 +1,24 @@
 .list{
     display: flex;
-    width: 200;
-    height: 200;
     margin: 10px;
-    padding: 4px;
+    padding: 40px;
     gap: 50px;
 }
 
 .item{
-    border-color: red;
-    gap: 50px;
+    width: 300;
+    height: 300;
+    gap: 40px;
     font-size: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    width: 500;
-    height: 500;
-    margin: 105x;
-
+    background: linear-gradient(to right, transparent, mistyrose);
 }
 .photo{
     display: flex;
-    width: 10px;
-    height: 100px;
-    padding: 15px;
+    width: 160px;
+    height: 160px;
+    padding-bottom: 0; 
+    padding-left:40px;
+    padding-bottom: 25px;
 }
+

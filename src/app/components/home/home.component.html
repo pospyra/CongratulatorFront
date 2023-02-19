@@ -1,7 +1,8 @@
 <p >Ближайшие дни рождения 🎉 </p>
 <div class="list">
     <div *ngFor="let item of list$ |async" class="item">
-        <button (click)="deletePerson(item.id)" style="float: right;  color:brown">Delete</button>
+        <button (click)="deletePerson(item.id)" style="float: right;  color:brown">❌</button>
+        <button style="float:right;" [routerLink]="['/edit', item.id]">✏️</button>
         <p>{{item.name}}</p>
         <p >День Рождение {{item.dateBirthday |date}} </p>
         <div class="photo">

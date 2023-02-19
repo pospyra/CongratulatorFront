@@ -19,10 +19,14 @@ export class LisrBirthdayService {
   }
   
   public createPerson(name: any, date: any, photo: any ) : Observable<any>{
-    return this._http.post(`https://localhost:7228/createAd?name=${name}&dateBrth=${date}`, photo);
+    return this._http.post(`https://localhost:7228/create?name=${name}&dateBrth=${date}`, photo);
   }
 
   public deletePerson(id: number): void{
     this._http.delete(`https://localhost:7228/delete/${id}`).subscribe();
+  }
+
+  updatePerson(id: any, name: any, date: any, photo: any): Observable<any>{
+    return this._http.put<any>(`https://localhost:7228/update/${id}?name=${name}&dateBrth=${date}`, photo);
   }
 }

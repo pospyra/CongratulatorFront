@@ -21,5 +21,4 @@ export class AllBirthdayComponent implements OnInit {
       this.service.deletePerson(id);
       console.log('удалено');
     }
-  
   }

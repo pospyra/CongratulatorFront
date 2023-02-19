@@ -1,12 +1,11 @@
 <p>Добавить запись</p>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
     <div>
     <label for="name">
-        Name
+        Имя 
       </label>
       <input id="name" type="text" formControlName="name">
     </div>
-
     <div>
         <label for="date">
             Дата
@@ -14,5 +13,14 @@
           <input id="date" type="text" formControlName="date">
         </div>
 
+
+      <div>
+        <input 
+        type ="file"
+        (change)="onFileChange($event)" 
+        >
+      </div>  
+
+      
         <button class="button" type="submit">Добавить</button>
 </form>

@@ -1,0 +1,22 @@
+<p>Редактировать запись</p>
+<form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
+    <div>
+    <label for="name">
+        Имя 
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="date">
+            Дата
+          </label>
+          <input id="date" type="text" formControlName="date">
+        </div>
+
+        <div>
+          <input type="file" ng-upload="uploaded_file = $file" formControlName="photo">
+        </div>  
+        
+        <button class="button" type="submit">Редактировать</button>
+</form>

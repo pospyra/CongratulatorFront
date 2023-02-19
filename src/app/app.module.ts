@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AllBirthdayComponent } from './components/all-birthday/all-birthday.component';
 import { AddPersonComponent } from './components/add-person/add-person.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditPersonComponent } from './components/edit-person/edit-person.component';
 
 @NgModule({ 
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     AllBirthdayComponent,
     AddPersonComponent,
+    EditPersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserModule,
+    BrowserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
