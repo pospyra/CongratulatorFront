@@ -1,22 +1,27 @@
+<div class="formEdit">
 <p>Редактировать запись</p>
 <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
-    <div>
+    <div  class="item">
     <label for="name">
         Имя 
       </label>
       <input id="name" type="text" formControlName="name">
     </div>
 
-    <div>
+    <div  class="item">
         <label for="date">
             Дата
           </label>
           <input id="date" type="text" formControlName="date">
         </div>
-
-        <div>
-          <input type="file" ng-upload="uploaded_file = $file" formControlName="photo">
+        
+        <div  class="item">
+          <input 
+          type ="file"
+          (change)="onFileChange($event)" >
         </div>  
         
-        <button class="button" type="submit">Редактировать</button>
+        <button class="button" type="submit"
+        style="background-color:azure; border-color: azure; margin: 10px;">Редактировать</button>
 </form>
+</div>

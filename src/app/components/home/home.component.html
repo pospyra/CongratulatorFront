@@ -4,7 +4,7 @@
         <button (click)="deletePerson(item.id)" style="float: right;  color:brown">❌</button>
         <button style="float:right;" [routerLink]="['/edit', item.id]">✏️</button>
         <p>{{item.name}}</p>
-        <p >День Рождение {{item.dateBirthday |date}} </p>
+        <p >{{item.dateBirthday |date}} </p>
         <div class="photo">
             <img
             [src]="'data:image/png;base64,' + item.kodBase64" 

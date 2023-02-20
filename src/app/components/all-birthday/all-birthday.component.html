@@ -1,11 +1,11 @@
-<p > Список дней рождений </p>
+<p > Список дней рождений 🎉 </p>
 <div class = "wrap" >
 <div class="list">
     <div *ngFor="let item of list$ |async" class="item"  style="border-color: blue;">
         <button (click)="deletePerson(item.id)" style="float: right;  color:brown">❌</button>
         <button style="float:right;" [routerLink]="['/edit', item.id]">✏️</button>
         <p>{{item.name}}</p>
-        <p >День Рождения {{item.dateBirthday |date}} </p>
+        <p >{{item.dateBirthday |date}} </p>
         <div class="photo" >
             <img
             [src]="'data:image/png;base64,' + item.kodBase64" 

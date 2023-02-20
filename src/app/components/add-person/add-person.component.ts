@@ -24,21 +24,15 @@ export class AddPersonComponent implements OnInit {
   }
 
   onFileChange(event: any) {
-    // const reader = new FileReader();
-    // if(event.target.files && event.target.files.length) {
-    //   const [file] = event.target.files;
-    //   reader.readAsDataURL(file);
-
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.form.get('photo')?.setValue(file);
   }}
 
 onSubmit(){
-  const formData = new FormData();
+   const formData = new FormData();
    const photos =  this.form.get('photo')?.value;
-  formData.append('file', photos!);
-  // this.service.createPerson(this.form.get('name')?.value, this.form.get('date')?.value , this.form.get('photo')?.value).subscribe(res=>{
+   formData.append('file', photos!);
     this.service.createPerson(this.form.get('name')?.value, this.form.get('date')?.value , formData).subscribe(res=>{
     console.log(res);
     this.router.navigateByUrl('' );

@@ -13,7 +13,7 @@ export class EditPersonComponent {
     id: [this.activatedRoute.snapshot.params['id']],
     name :['', [Validators.required]],
     date :['', [Validators.required]],
-    photo:[]
+    photo:[[]]
   })
 
   constructor(private service: LisrBirthdayService,
@@ -21,9 +21,20 @@ export class EditPersonComponent {
     private fb : FormBuilder,
     private activatedRoute: ActivatedRoute, ){}
 
-    onSubmit(){
-      this.service.updatePerson(this.formEdit.get('id')?.value ,this.formEdit.get('name')?.value,
-      this.formEdit.get('date')?.value, this.formEdit.get('photo')?.value);
+
+    onFileChange(event: any) {
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.formEdit.get('photo')?.setValue(file);
+    }}
+  
+  onSubmit(){
+     const formData = new FormData();
+     const photos =  this.formEdit.get('photo')?.value;
+     formData.append('file', photos!);
+      this.service.updatePerson(this.formEdit.get('id')?.value, this.formEdit.get('name')?.value, this.formEdit.get('date')?.value , formData).subscribe(res=>{
+      console.log(res);
       this.router.navigateByUrl('' );
+    });
     }
 }

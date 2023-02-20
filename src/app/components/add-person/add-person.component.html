@@ -1,26 +1,27 @@
+<div class="formCreate">
 <p>Добавить запись</p>
 <form [formGroup]="form" (ngSubmit)="onSubmit()" >
-    <div>
+    <div class="item">
     <label for="name">
         Имя 
       </label>
       <input id="name" type="text" formControlName="name">
     </div>
-    <div>
+
+    <div  class="item">
         <label for="date">
-            Дата
+            Дата в формате mm/dd/yy
           </label>
           <input id="date" type="text" formControlName="date">
         </div>
 
-
-      <div>
+      <div class="item">
         <input 
         type ="file"
-        (change)="onFileChange($event)" 
-        >
+        (change)="onFileChange($event)" >
       </div>  
 
-      
-        <button class="button" type="submit">Добавить</button>
+      <button class="button" type="submit" 
+      style="background-color:azure; border-color: azure; margin: 10px;">Добавить </button>
 </form>
+</div>
