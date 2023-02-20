@@ -2,26 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
 
-## Development server
+SPA веб-приложение, сервер предоставляет АПИ (ASP.NET Core Web API), информация хранится в объектах, персистентность которых реализуется с помощью использования БД. Корневая страница выводит список сегодняшних и ближайших ДР, остальная функциональность доступна на отдельных страницах, ссылки на которые ведут с корневой. Реализовано хранение и отображение фотографий именинников.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+*Корневая страница
+![image](https://user-images.githubusercontent.com/68563967/220104800-f2002190-b0af-4a39-9f5a-888a5e1b9bbc.png)
 
-## Code scaffolding
+*Список всех ДР
+![image](https://user-images.githubusercontent.com/68563967/220104684-deb6a77f-eb75-422e-b389-a47afa2319e6.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*Добавление записи в список
+![image](https://user-images.githubusercontent.com/68563967/220105316-e72c9964-b40f-4494-bcaf-688b6f32d71a.png)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*Редактирование и удаление на карточке
