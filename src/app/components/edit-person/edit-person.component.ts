@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LisrBirthdayService } from 'src/app/services/lisr-birthday.service';
+import { ListBirthdayService } from 'src/app/services/list-birthday.service';
 
 @Component({
   selector: 'app-edit-person',
@@ -9,14 +9,14 @@ import { LisrBirthdayService } from 'src/app/services/lisr-birthday.service';
   styleUrls: ['./edit-person.component.scss']
 })
 export class EditPersonComponent {
-  readonly formEdit = this.fb.group({ 
+  readonly formEdit = this.fb.group({
     id: [this.activatedRoute.snapshot.params['id']],
     name :['', [Validators.required]],
     date :['', [Validators.required]],
     photo:[[]]
   })
 
-  constructor(private service: LisrBirthdayService,
+  constructor(private service: ListBirthdayService,
     private router: Router,
     private fb : FormBuilder,
     private activatedRoute: ActivatedRoute, ){}
@@ -27,7 +27,7 @@ export class EditPersonComponent {
         const file = event.target.files[0];
         this.formEdit.get('photo')?.setValue(file);
     }}
-  
+
   onSubmit(){
      const formData = new FormData();
      const photos =  this.formEdit.get('photo')?.value;

@@ -1,24 +1,48 @@
-.list{
-    display: flex;
-    margin: 10px;
-    padding: 40px;
-    gap: 50px;
-    flex-wrap: wrap;
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
 }
 
-.item{
-    width: 300;
-    height: 300;
-    gap: 40px;
-    font-size: 20px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: linear-gradient(to right, transparent, mistyrose);
+.item {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(to right, transparent, mistyrose);
+
 }
-.photo{
-    display: flex;
-    width: 160px;
-    height: 160px;
-    padding-bottom: 0; 
-    padding-left:40px;
-    padding-bottom: 25px;
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+/* Стили для кнопки удаления */
+button:first-child {
+  color: brown;
+  float: right;
+}
+
+/* Стили для кнопки редактирования */
+button:last-child {
+  float: right;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }

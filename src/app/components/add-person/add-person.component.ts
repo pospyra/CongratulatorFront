@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LisrBirthdayService } from 'src/app/services/lisr-birthday.service';
+import { ListBirthdayService } from 'src/app/services/list-birthday.service';
 
 @Component({
   selector: 'app-add-person',
@@ -9,14 +9,14 @@ import { LisrBirthdayService } from 'src/app/services/lisr-birthday.service';
   styleUrls: ['./add-person.component.scss'],
 })
 export class AddPersonComponent implements OnInit {
-  readonly form = this.fb.group({ 
+  readonly form = this.fb.group({
     name :['', [Validators.required]],
     date :['', [Validators.required]],
     photo: [[]]
   })
 
 
-  constructor(private service: LisrBirthdayService,
+  constructor(private service: ListBirthdayService,
     private router: Router,
     private fb : FormBuilder, ){}
 

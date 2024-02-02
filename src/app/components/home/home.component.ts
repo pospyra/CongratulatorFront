@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LisrBirthday } from 'src/app/models/ListBirthday';
-import { LisrBirthdayService } from 'src/app/services/lisr-birthday.service';
+import { ListBirthdayService } from 'src/app/services/list-birthday.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,18 +10,19 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   list$: Observable<LisrBirthday[]> =  this.service.getListNearest();
-  constructor(private service: LisrBirthdayService) { }
+  constructor(private service: ListBirthdayService) { }
 
   ngOnInit(): void {
     this.service.getListNearest();
     }
 
     deletePerson(id: number){
-      this.service.deletePerson(id);
-      console.log('удалено');
+      this.service.deletePerson(id).subscribe(()=>
+      {
+        this.list$ = this.service.getListAll();
+        console.log('удалено');
+
+      });
     }
   }
 
-
-        //   this._auth.login(this.form.getRawValue()).subscribe(res=>{
-        // console.log(res);
